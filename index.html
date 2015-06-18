@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>RasterPlotter</title>
+  <link rel="stylesheet" href="grid-system.css"/>
+  <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+<div id="page">
+  <div id="page-inner">
+    <div>
+      Width <input id="in-width" type="text" value="400"/>
+      Height <input id="in-height" type="text" value="400"/>
+      <!--<input id="in-run" type="button" value="Run"/>-->
+      <input id="in-run" type="checkbox" checked/> Run
+    </div>
+    <div class="row">
+      <div class="col-packed">
+        <canvas id="canvas" width="400" height="300"></canvas>
+      </div>
+      <div class="col-packed">
+        <div>
+          R = <textarea id="in-r-expr" cols="45" rows="8">
+var relX = x - 0.5;
+var relY = y - 0.5;
+var dist = /*sqrt*/(relX*relX + relY*relY);
+
+if(dist < 0.1)
+  1.0 * (dist / 0.1)
+else 0</textarea>
+        </div>
+        <div>
+          G = <textarea id="in-g-expr" cols="30" rows="5">
+var foo = ((x + t) * 100) | 0;
+if(foo % 2 == 0)
+  0.2
+else 0.0</textarea>
+        </div>
+        <div>
+          B = <textarea id="in-b-expr" cols="30" rows="5">
+var foo = ((y + t) * 100) | 0;
+if(foo % 2 == 0)
+  0.4
+else 0.0</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

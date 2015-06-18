@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.col-packed {
+    float: left;
+    width: auto;
+    padding-right: 15px;
+}
+
+#page {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-inner {
+
+}
+
+#in-width, #in-height {
+
+}
+
+#canvas {
+
+}
